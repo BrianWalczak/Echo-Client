@@ -1,0 +1,31 @@
+{
+
+ "name": "Brian's Discord Client",
+
+ "version": "1.2.0",
+
+ "description": "Run Discord in your console!",
+
+ "main": "index.js",
+
+ "keywords": [],
+
+ "author": "Briann",
+
+ "license": "ISC",
+
+ "dependencies": {
+
+  "@types/node": "^18.0.6",
+
+  "enquirer": "^2.4.1",
+
+  "inquirer": "^9.2.11",
+
+  "node-console-colors": "^1.1.5",
+
+  "node-fetch": "^3.2.6"
+
+ }
+
+}

@@ -24,7 +24,8 @@ async function ask() {
         message: 'Please enter an image URL'
     });
 
-    var fileName = path.basename(image.url);
+    const parsedUrl = new URL(image.url);
+    const fileName = path.basename(parsedUrl.pathname);
     https.get(image.url, (res) => {
         const path = `${__dirname}/${'images/' + fileName}`;
         const filePath = fs.createWriteStream(path);

@@ -17,7 +17,7 @@ $ cd Brians-Discord-Client # Enter the extracted repository folder
 ```
 
 Before continuing any further, you'll first have to get your Discord account token which will be used for API requests.
-If you don't know how to do this, you can read [this article](https://www.geeksforgeeks.org/how-to-get-discord-token/) for more information!
+To get your token, you can execute this code on a discord.com Chrome tab: `alert((webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());`
 
 Once you find your Discord token and copy it to your clipboard, open up token.txt with `sudo nano token.txt` and paste your key. Then, run these commands to finish installation: 
 ```

@@ -11,17 +11,22 @@
 ## Installation
 To install the client on your device, enter the following commands into your terminal:
 
-```
+```bash
 $ git clone https://github.com/BrianWalczak/Brians-Discord-Client.git; # Clone the repository from GitHub
 $ cd Brians-Discord-Client # Enter the extracted repository folder
+$ npm install # Install libraries and dependencies
 ```
 
 Before continuing any further, you'll first have to get your Discord account token which will be used for API requests.
-To get your token, you can execute this code on a discord.com Chrome tab: `alert((webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());`
-
-Once you find your Discord token and copy it to your clipboard, open up token.txt with `sudo nano token.txt` and paste your key. Then, run these commands to finish installation: 
+To get your token, you can execute this code on a discord.com Chrome tab:
+```js
+document.write("Your Discord token is: " + (webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken());
 ```
-$ npm install # Install libraries and dependencies
+<b>Warning: Your Discord token is case-sensitive and grants access to your Discord account. Do NOT share this token to anyone.</b>
+
+<br></br>
+Once you find your Discord token and copy it to your clipboard, open up token.txt with `sudo nano token.txt` and paste your key. Then, run this command to start the client: 
+```bash
 $ node . # Start the Node program
 ```
 Once you run ``node .``, the Discord client will start automatically!

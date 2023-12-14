@@ -4,13 +4,14 @@ const { prompt } = require('enquirer');
 const fs = require('fs');
 const https = require('https');
 var config = null;
+var discordToken = null;
 console.error = function() {};
 
 async function getGuilds() {
     const req = await fetch(`https://discord.com/api/users/@me/guilds`, {
         method: "GET",
         headers: {
-            "Authorization": process.env.discordToken,
+            "Authorization": discordToken,
         }
     })
 
@@ -25,7 +26,7 @@ async function getChannels(guild) {
     const req = await fetch(`https://discord.com/api/v9/guilds/${guild}/channels`, {
         method: "GET",
         headers: {
-            "Authorization": process.env.discordToken,
+            "Authorization": discordToken,
         }
     })
 
@@ -125,5 +126,10 @@ async function configureSettings() {
     }
 }
 
-console.clear();
-configureSettings();
+fs.readFile("token.txt", 'utf8', (error, data) => {
+    if (error) return console.error(error);
+    discordToken = data;
+
+    console.clear();
+    configureSettings();
+});

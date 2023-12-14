@@ -3,6 +3,7 @@ const readline = require('readline');
 const fs = require('fs');
 const https = require('https');
 var config = null;
+var discordToken = null;
 console.error = function() {};
 
 const appReadline = readline.createInterface({
@@ -41,7 +42,7 @@ async function sendMessage(message) {
         }),
         headers: {
             "Content-Type": "application/json",
-            "Authorization": process.env.discordToken,
+            "Authorization": discordToken,
         }
     })
 
@@ -118,4 +119,9 @@ async function refresh() {
     });
 }
 
-refresh();
+fs.readFile("token.txt", 'utf8', (error, data) => {
+    if (error) return console.error(error);
+    discordToken = data;
+
+    refresh();
+});

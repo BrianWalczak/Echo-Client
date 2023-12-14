@@ -81,7 +81,7 @@ async function getMessages() {
     const req = await fetch(`https://discord.com/api/v9/channels/${config.channelID}/messages?limit=100`, {
         method: "GET",
         headers: {
-            "Authorization": process.env.discordToken,
+            "Authorization": discordToken,
         }
     })
 

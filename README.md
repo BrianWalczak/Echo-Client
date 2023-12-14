@@ -19,10 +19,9 @@ $ cd Brians-Discord-Client # Enter the extracted repository folder
 Before continuing any further, you'll first have to get your Discord account token which will be used for API requests.
 If you don't know how to do this, you can read [this article](https://www.geeksforgeeks.org/how-to-get-discord-token/) for more information!
 
-Once you find your Discord token and copy it to your clipboard, run the following commands to finish installation: 
+Once you find your Discord token and copy it to your clipboard, open up token.txt with `sudo nano token.txt` and paste your key. Then, run these commands to finish installation: 
 ```
 $ npm install # Install libraries and dependencies
-$ export discordToken=YOUR_TOKEN_HERE # Replace "YOUR_TOKEN_HERE" with your Discord account token
 $ node . # Start the Node program
 ```
 Once you run ``node .``, the Discord client will start automatically!

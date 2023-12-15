@@ -1,4 +1,4 @@
-<h1 align="center">Brian's Discord Client</h1>
+<h1 align="center">Echo Client - The text based Discord client</h1>
 
 <p align="center">Run Discord in your console, all powered by the Discord API (and Node.js)!<br><br></p>
 
@@ -12,8 +12,8 @@
 To install the client on your device, enter the following commands into your terminal:
 
 ```bash
-$ git clone https://github.com/BrianWalczak/Brians-Discord-Client.git; # Clone the repository from GitHub
-$ cd Brians-Discord-Client # Enter the extracted repository folder
+$ git clone https://github.com/BrianWalczak/Echo-Client.git; # Clone the repository from GitHub
+$ cd Echo-Client # Enter the extracted repository folder
 $ npm install # Install libraries and dependencies
 ```
 

@@ -55,7 +55,6 @@ console.log(`
 ███████╗╚█████╔╝██║░░██║╚█████╔╝  ╚█████╔╝███████╗██║███████╗██║░╚███║░░░██║░░░
 ╚══════╝░╚════╝░╚═╝░░╚═╝░╚════╝░  ░╚════╝░╚══════╝╚═╝╚══════╝╚═╝░░╚══╝░░░╚═╝░░░
 
-The feature rich text-based Discord client!
-`);
+The feature rich text-based Discord client!\n\n`);
 
 run();

@@ -22,6 +22,8 @@ function updateConfig() {
 
 async function run() {
     await updateConfig();
+	
+	if(!config.guildName || !config.channelName || !config.channelID) return import('./config.js');
 
     const command = await prompt({
         type: 'select',

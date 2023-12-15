@@ -67,18 +67,28 @@ function updateConfig() {
 
 async function configureSettings() {
     await updateConfig();
-    console.log(`---------- Configuration ----------\n${config.guildName != "null" ? "Server | " + config.guildName : "The current channel has been manually set"}\n${config.channelName != "null" ? "Channel | " + config.channelName : "Channel ID | " + config.channelID}\n\n`);
+	
+	if (!config.guildName || !config.channelName || !config.channelID) {
+		console.log("Welcome to Echo Client, the feature-rich text based Discord client!\nTo get started, select a server that you'd like to view.\n\n");
+	} else {
+		console.log(`---------- Configuration ----------\n${config.guildName != "null" ? "Server | " + config.guildName : "The current channel has been manually set"}\n${config.channelName != "null" ? "Channel | " + config.channelName : "Channel ID | " + config.channelID}\n\n`);
+	}
 
     const type = await prompt({
         type: 'select',
         name: 'option',
-        message: 'Please select an option:',
+        message: 'Please select a method:',
         choices: ['Select server', 'Manual'],
     });
-
-    console.clear();
-    console.log(`---------- Configuration ----------\n${config.guildName != "null" ? "Server | " + config.guildName : "The current channel has been manually set"}\n${config.channelName != "null" ? "Channel | " + config.channelName : "Channel ID | " + config.channelID}\n\n`);
-    if (type.option == 'Select server') {
+	
+	console.clear();
+	if (!config.guildName || !config.channelName || !config.channelID) {
+		console.log("Welcome to Echo Client, the feature-rich text based Discord client!\nTo get started, select a server that you'd like to view.\n\n");
+	} else {
+		console.log(`---------- Configuration ----------\n${config.guildName != "null" ? "Server | " + config.guildName : "The current channel has been manually set"}\n${config.channelName != "null" ? "Channel | " + config.channelName : "Channel ID | " + config.channelID}\n\n`);
+	}
+	
+	if (type.option == 'Select server') {
         const guilds = await getGuilds();
 
         const q1 = await prompt({
@@ -94,6 +104,14 @@ async function configureSettings() {
                 return this.map(answer);
             }
         });
+		
+		console.clear();
+		if (!config.guildName || !config.channelName || !config.channelID) {
+			console.log("Welcome to Echo Client, the feature-rich text based Discord client!");
+			console.log("Now, select a channel that you'd like to message in.\n\n");
+		} else {
+			console.log(`---------- Configuration ----------\n${config.guildName != "null" ? "Server | " + config.guildName : "The current channel has been manually set"}\n${config.channelName != "null" ? "Channel | " + config.channelName : "Channel ID | " + config.channelID}\n\n`);
+		}
 
         const channels = await getChannels(Object.values(q1.guild)[0]);
         const q2 = await prompt({
